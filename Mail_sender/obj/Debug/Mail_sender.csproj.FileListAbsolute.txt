@@ -1,0 +1,10 @@
+C:\Users\Lenovo\OneDrive\C#\Mail_sender\Mail_sender\obj\Debug\Mail_sender.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\OneDrive\C#\Mail_sender\Mail_sender\obj\Debug\Mail_sender.Form1.resources
+C:\Users\Lenovo\OneDrive\C#\Mail_sender\Mail_sender\obj\Debug\Mail_sender.Properties.Resources.resources
+C:\Users\Lenovo\OneDrive\C#\Mail_sender\Mail_sender\obj\Debug\Mail_sender.csproj.GenerateResource.Cache
+C:\Users\Lenovo\OneDrive\C#\Mail_sender\Mail_sender\obj\Debug\Mail_sender.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\OneDrive\C#\Mail_sender\Mail_sender\bin\Debug\Mail_sender.exe.config
+C:\Users\Lenovo\OneDrive\C#\Mail_sender\Mail_sender\bin\Debug\Mail_sender.exe
+C:\Users\Lenovo\OneDrive\C#\Mail_sender\Mail_sender\bin\Debug\Mail_sender.pdb
+C:\Users\Lenovo\OneDrive\C#\Mail_sender\Mail_sender\obj\Debug\Mail_sender.exe
+C:\Users\Lenovo\OneDrive\C#\Mail_sender\Mail_sender\obj\Debug\Mail_sender.pdb
