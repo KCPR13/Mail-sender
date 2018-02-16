@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Mail_sender.Properties
+namespace mailSender.Properties
 {
 
 
