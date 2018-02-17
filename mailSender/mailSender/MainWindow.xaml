@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:mailSender"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="200">
+        Title="MainWindow" Height="500" Width="515">
     <Grid>
-        <ProgressBar HorizontalAlignment="Left" Height="10" Margin="8,420,0,0" VerticalAlignment="Top" Width="180" RenderTransformOrigin="-0.343,2.547"/>
-        <Button Content="Send" HorizontalAlignment="Left" Margin="75,434,0,0" VerticalAlignment="Top" Width="50"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="8,161,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="180">
+        <ProgressBar HorizontalAlignment="Left" Height="10" Margin="10,420,0,0" VerticalAlignment="Top" Width="480" RenderTransformOrigin="-0.343,2.547"/>
+        <Button Content="Send" HorizontalAlignment="Left" Margin="225,434,0,0" VerticalAlignment="Top" Width="50"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="10,161,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="480">
             <PasswordBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -19,21 +19,21 @@
                 </TransformGroup>
             </PasswordBox.RenderTransform>
         </PasswordBox>
-        <Label Content="From:" HorizontalAlignment="Left" Margin="80,10,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="8,30,-18.4,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="180"/>
-        <Label Content="To:" HorizontalAlignment="Left" Margin="87,50,0,0" VerticalAlignment="Top" Height="25" Width="26"/>
-        <Label Content="Unsername:" HorizontalAlignment="Left" Margin="64,90,0,0" VerticalAlignment="Top" Height="25" Width="72"/>
-        <Label Content="Password:" HorizontalAlignment="Left" Margin="69,135,0,0" VerticalAlignment="Top" Width="62"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="8,70,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="180"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="8,116,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="180"/>
-        <Label Content="Subject:" HorizontalAlignment="Left" Margin="70,179,0,0" VerticalAlignment="Top" Width="56" Height="24"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="8,203,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="180"/>
-        <Label Content="Message:" HorizontalAlignment="Left" Margin="70,223,0,0" VerticalAlignment="Top" Width="60" Height="28"/>
-        <TextBox HorizontalAlignment="Left" Height="60" Margin="8,251,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="180"/>
-        <Label Content="Attachement:" HorizontalAlignment="Left" Margin="60,311,0,0" VerticalAlignment="Top" Width="80" Height="25"/>
-        <DocumentViewer HorizontalAlignment="Left" Margin="263,191,-143.4,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="8,400,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="150"/>
-        <Button Content="..." HorizontalAlignment="Left" Margin="158,400,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="2.502,1.972"/>
-        <ListBox HorizontalAlignment="Left" Height="60" Margin="8,336,0,0" VerticalAlignment="Top" Width="180"/>
+        <Label Content="From:" HorizontalAlignment="Left" Margin="230,10,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="10,30,-18.4,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="480"/>
+        <Label Content="To:" HorizontalAlignment="Left" Margin="237,50,0,0" VerticalAlignment="Top" Height="25" Width="26"/>
+        <Label Content="Unsername:" HorizontalAlignment="Left" Margin="214,90,0,0" VerticalAlignment="Top" Height="25" Width="72"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="219,135,0,0" VerticalAlignment="Top" Width="62"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="10,70,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="480"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="10,116,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="480"/>
+        <Label Content="Subject:" HorizontalAlignment="Left" Margin="222,179,0,0" VerticalAlignment="Top" Width="56" Height="24"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="10,203,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="480"/>
+        <Label Content="Message:" HorizontalAlignment="Left" Margin="220,223,0,0" VerticalAlignment="Top" Width="60" Height="28"/>
+        <TextBox HorizontalAlignment="Left" Height="60" Margin="10,251,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="480"/>
+        <Label Content="Attachement:" HorizontalAlignment="Left" Margin="210,311,0,0" VerticalAlignment="Top" Width="80" Height="25"/>
+        <DocumentViewer HorizontalAlignment="Left" Margin="603,223,-484.4,-31.6" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="10,400,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="450"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="460,400,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="2.502,1.972"/>
+        <ListBox HorizontalAlignment="Left" Height="60" Margin="10,336,0,0" VerticalAlignment="Top" Width="480"/>
     </Grid>
 </Window>
