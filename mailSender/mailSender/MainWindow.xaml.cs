@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net;
+using System.Net.Mail;
+using Microsoft.Win32;
 
 namespace mailSender
 {
@@ -20,9 +23,25 @@ namespace mailSender
     /// </summary>
     public partial class MainWindow : Window
     {
+        //NetworkCredential login;
+        //SmtpClient client;
+        //MailMessage msg;
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        OpenFileDialog ofd = new OpenFileDialog();
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ofd.ShowDialog();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
