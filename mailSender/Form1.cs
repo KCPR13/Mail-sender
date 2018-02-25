@@ -9,19 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
-
+using System.IO;
 
 namespace mailSender
 {
     
     public partial class mailSender : Form
     {
+        OpenFileDialog ofd = new OpenFileDialog();
         NetworkCredential login;
         SmtpClient client;
         MailMessage msg;
 
-        string password;
-        
+        int procentage;
+       int[] sizeList = new int[20];
+        int z = 0;
+
         public mailSender()
         {
             InitializeComponent();
@@ -34,11 +37,11 @@ namespace mailSender
             collection.Add("587");
             collection.Add("25");
             this.portDomain.Text = "587";
-           
+            attachementListBox.Hide();
 
-           
-           
-         
+
+
+
 
         }
 
@@ -55,10 +58,7 @@ namespace mailSender
 
         private void Save_CheckedChanged(object sender, EventArgs e)
         {
-            if(savePassword.Checked)
-            { 
-                password=PasswordTextBox.Text;
-            }
+            
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -80,13 +80,7 @@ namespace mailSender
                     client.EnableSsl = sslCheckBox.Checked;
                     client.Credentials = login;
                      MessageBox.Show(string.Format("You've succeeded in logging in"), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (MessageBox.Equals(DialogResult.OK, DialogResult.OK))
-                    {
-                        this.Hide();
-                        Form2 f2 = new Form2();
-                        f2.ShowDialog();
-                    }
-
+                  
                 }
                 catch (Exception ex)
                 {
@@ -123,5 +117,64 @@ namespace mailSender
             
         }
 
+        private void portDomain_SelectedItemChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void attachementPictureBox_Click(object sender, EventArgs e)
+        {
+            
+            //ofd.Filter = "JPG|*.jpg"; //filtr danych w ofd
+            if(ofd.ShowDialog()==DialogResult.OK) //wykonuje sie tylko gdy nacisniesz ok
+            {
+                
+                Attachment atch = new Attachment(ofd.FileName);
+                FileInfo info = new FileInfo(ofd.FileName);
+
+                long size = info.Length/(1024*1024); //zamiana na mb
+                sizeList[z] = Convert.ToInt32(size);
+                z++;
+                attachementProgressBar.Minimum = 0;
+                attachementProgressBar.Maximum = 25;
+
+                if (size > 25)
+                {
+                    MessageBox.Show(string.Format("Attachment must be smaller than 25mb!"), "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }else
+                {
+                    attachementProgressBar.Increment(Convert.ToInt32(size));
+                    procentage = attachementProgressBar.Value * 4;
+                    procentageLabel.Text = Convert.ToString(procentage) + "%";
+                    attachementListBox.Items.Add(info.Name);
+                    attachementListBox.Show();
+                }
+                
+            }
+
+        }
+
+        private void attachementListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void delAtchButton_Click(object sender, EventArgs e)
+        {
+            
+            ListBox.SelectedObjectCollection selectedItems = new ListBox.SelectedObjectCollection(attachementListBox);
+            selectedItems = attachementListBox.SelectedItems;
+            
+            if(attachementListBox.SelectedIndex !=-1)
+            {
+                for (int i = selectedItems.Count - 1; i >= 0; i--)
+                    
+                    attachementListBox.Items.Remove(selectedItems[i]);
+               
+                
+            }
+            
+
+        }
     }
 }

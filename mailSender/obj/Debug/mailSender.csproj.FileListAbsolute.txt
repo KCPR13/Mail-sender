@@ -13,7 +13,6 @@ C:\Users\Lenovo\OneDrive\git\mailSender\mailSender\bin\Debug\mailSender.exe
 C:\Users\Lenovo\OneDrive\git\mailSender\mailSender\bin\Debug\mailSender.pdb
 C:\Users\Lenovo\OneDrive\git\mailSender\mailSender\obj\Debug\mailSender.csprojResolveAssemblyReference.cache
 C:\Users\Lenovo\OneDrive\git\mailSender\mailSender\obj\Debug\mailSender.mailSender.resources
-C:\Users\Lenovo\OneDrive\git\mailSender\mailSender\obj\Debug\mailSender.Form2.resources
 C:\Users\Lenovo\OneDrive\git\mailSender\mailSender\obj\Debug\mailSender.Properties.Resources.resources
 C:\Users\Lenovo\OneDrive\git\mailSender\mailSender\obj\Debug\mailSender.csproj.GenerateResource.Cache
 C:\Users\Lenovo\OneDrive\git\mailSender\mailSender\obj\Debug\mailSender.csproj.CoreCompileInputs.cache
