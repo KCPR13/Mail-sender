@@ -43,7 +43,7 @@
             // 
             this.To.AutoSize = true;
             this.To.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.To.Location = new System.Drawing.Point(12, 9);
+            this.To.Location = new System.Drawing.Point(27, 9);
             this.To.Name = "To";
             this.To.Size = new System.Drawing.Size(42, 25);
             this.To.TabIndex = 0;
@@ -51,9 +51,9 @@
             // 
             // toTextBox
             // 
-            this.toTextBox.Location = new System.Drawing.Point(47, 9);
+            this.toTextBox.Location = new System.Drawing.Point(92, 9);
             this.toTextBox.Name = "toTextBox";
-            this.toTextBox.Size = new System.Drawing.Size(423, 22);
+            this.toTextBox.Size = new System.Drawing.Size(378, 22);
             this.toTextBox.TabIndex = 1;
             // 
             // label1
