@@ -54,6 +54,9 @@
             // 
             // Email
             // 
+            this.Email.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Email.AutoSize = true;
             this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Email.Location = new System.Drawing.Point(10, 20);
@@ -64,6 +67,9 @@
             // 
             // emailTextBox
             // 
+            this.emailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.emailTextBox.Location = new System.Drawing.Point(106, 20);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(552, 22);
@@ -71,6 +77,9 @@
             // 
             // PasswordTextBox
             // 
+            this.PasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.PasswordTextBox.Location = new System.Drawing.Point(106, 60);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(552, 22);
@@ -89,8 +98,12 @@
             // 
             // buttonSend
             // 
+            this.buttonSend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSend.Location = new System.Drawing.Point(305, 600);
+            this.buttonSend.MaximumSize = new System.Drawing.Size(270, 135);
+            this.buttonSend.MinimumSize = new System.Drawing.Size(90, 45);
             this.buttonSend.Name = "buttonSend";
             this.buttonSend.Size = new System.Drawing.Size(90, 45);
             this.buttonSend.TabIndex = 7;
@@ -101,6 +114,8 @@
             // portDomain
             // 
             this.portDomain.Location = new System.Drawing.Point(61, 541);
+            this.portDomain.MaximumSize = new System.Drawing.Size(110, 0);
+            this.portDomain.MinimumSize = new System.Drawing.Size(110, 0);
             this.portDomain.Name = "portDomain";
             this.portDomain.Size = new System.Drawing.Size(110, 22);
             this.portDomain.TabIndex = 9;
@@ -112,6 +127,8 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(10, 543);
+            this.label2.MaximumSize = new System.Drawing.Size(45, 20);
+            this.label2.MinimumSize = new System.Drawing.Size(45, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 20);
             this.label2.TabIndex = 10;
@@ -133,14 +150,17 @@
             this.sslCheckBox.AutoSize = true;
             this.sslCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.sslCheckBox.Location = new System.Drawing.Point(10, 590);
+            this.sslCheckBox.MaximumSize = new System.Drawing.Size(70, 24);
+            this.sslCheckBox.MinimumSize = new System.Drawing.Size(70, 24);
             this.sslCheckBox.Name = "sslCheckBox";
-            this.sslCheckBox.Size = new System.Drawing.Size(63, 24);
+            this.sslCheckBox.Size = new System.Drawing.Size(70, 24);
             this.sslCheckBox.TabIndex = 13;
             this.sslCheckBox.Text = "SSL";
             this.sslCheckBox.UseVisualStyleBackColor = true;
             // 
             // smtpCheckedListBox
             // 
+            this.smtpCheckedListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.smtpCheckedListBox.FormattingEnabled = true;
             this.smtpCheckedListBox.Items.AddRange(new object[] {
             "poczta.interia.pl",
@@ -182,6 +202,9 @@
             // 
             // toTextBox
             // 
+            this.toTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.toTextBox.Location = new System.Drawing.Point(106, 100);
             this.toTextBox.Name = "toTextBox";
             this.toTextBox.Size = new System.Drawing.Size(552, 22);
@@ -189,6 +212,9 @@
             // 
             // subjectTextBox
             // 
+            this.subjectTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.subjectTextBox.Location = new System.Drawing.Point(106, 140);
             this.subjectTextBox.Name = "subjectTextBox";
             this.subjectTextBox.Size = new System.Drawing.Size(552, 22);
@@ -196,7 +222,11 @@
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(10, 170);
+            this.textBox1.MaximumSize = new System.Drawing.Size(1200, 550);
+            this.textBox1.MinimumSize = new System.Drawing.Size(648, 270);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(648, 270);
@@ -204,6 +234,8 @@
             // 
             // attachementPictureBox
             // 
+            this.attachementPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.attachementPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("attachementPictureBox.Image")));
             this.attachementPictureBox.Location = new System.Drawing.Point(14, 446);
             this.attachementPictureBox.Name = "attachementPictureBox";
@@ -214,8 +246,12 @@
             // 
             // attachementProgressBar
             // 
+            this.attachementProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.attachementProgressBar.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.attachementProgressBar.Location = new System.Drawing.Point(58, 451);
+            this.attachementProgressBar.MaximumSize = new System.Drawing.Size(3000, 25);
+            this.attachementProgressBar.MinimumSize = new System.Drawing.Size(600, 25);
             this.attachementProgressBar.Name = "attachementProgressBar";
             this.attachementProgressBar.Size = new System.Drawing.Size(600, 25);
             this.attachementProgressBar.TabIndex = 21;
@@ -232,18 +268,24 @@
             // 
             // attachementListBox
             // 
+            this.attachementListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.attachementListBox.FormattingEnabled = true;
             this.attachementListBox.ItemHeight = 16;
-            this.attachementListBox.Location = new System.Drawing.Point(10, 324);
+            this.attachementListBox.Location = new System.Drawing.Point(10, 356);
             this.attachementListBox.Name = "attachementListBox";
-            this.attachementListBox.Size = new System.Drawing.Size(324, 116);
+            this.attachementListBox.Size = new System.Drawing.Size(648, 84);
             this.attachementListBox.TabIndex = 23;
             this.attachementListBox.SelectedIndexChanged += new System.EventHandler(this.attachementListBox_SelectedIndexChanged);
             // 
             // delAtchButton
             // 
+            this.delAtchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.delAtchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.delAtchButton.Location = new System.Drawing.Point(10, 482);
+            this.delAtchButton.MaximumSize = new System.Drawing.Size(180, 55);
+            this.delAtchButton.MinimumSize = new System.Drawing.Size(115, 55);
             this.delAtchButton.Name = "delAtchButton";
             this.delAtchButton.Size = new System.Drawing.Size(115, 55);
             this.delAtchButton.TabIndex = 24;
@@ -276,6 +318,7 @@
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.Email);
+            this.MinimumSize = new System.Drawing.Size(700, 700);
             this.Name = "mailSender";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

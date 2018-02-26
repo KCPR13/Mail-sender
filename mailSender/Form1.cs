@@ -21,13 +21,13 @@ namespace mailSender
         SmtpClient client;
         MailMessage msg;
 
-        int procentage;
-       int[] sizeList = new int[20];
-        int z = 0;
+        long size;
+       
 
         public mailSender()
         {
             InitializeComponent();
+           
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -54,6 +54,7 @@ namespace mailSender
         {
             PasswordTextBox.PasswordChar = '*'; //password character
             PasswordTextBox.MaxLength = 16; //maximum 16 characters
+            
         }
 
         private void Save_CheckedChanged(object sender, EventArgs e)
@@ -132,11 +133,10 @@ namespace mailSender
                 Attachment atch = new Attachment(ofd.FileName);
                 FileInfo info = new FileInfo(ofd.FileName);
 
-                long size = info.Length/(1024*1024); //zamiana na mb
-                sizeList[z] = Convert.ToInt32(size);
-                z++;
+                size = info.Length/(1024*1024); //zamiana na mb
                 attachementProgressBar.Minimum = 0;
                 attachementProgressBar.Maximum = 25;
+                int procentage;
 
                 if (size > 25)
                 {
@@ -161,20 +161,29 @@ namespace mailSender
 
         private void delAtchButton_Click(object sender, EventArgs e)
         {
-            
-            ListBox.SelectedObjectCollection selectedItems = new ListBox.SelectedObjectCollection(attachementListBox);
-            selectedItems = attachementListBox.SelectedItems;
-            
-            if(attachementListBox.SelectedIndex !=-1)
+            if (attachementListBox.Items.Count<=0)
             {
-                for (int i = selectedItems.Count - 1; i >= 0; i--)
-                    
-                    attachementListBox.Items.Remove(selectedItems[i]);
                
-                
             }
-            
+            else
+            {
+                ListBox.SelectedObjectCollection selectedItems = new ListBox.SelectedObjectCollection(attachementListBox);
+                selectedItems = attachementListBox.SelectedItems;
+                FileInfo info2 = new FileInfo(attachementListBox.SelectedItem.ToString());
+                // long size2 = info2.Length / (1024 * 1024);
 
+                if (attachementListBox.SelectedIndex != -1)
+                {
+                    for (int i = selectedItems.Count - 1; i >= 0; i--)
+                        attachementListBox.Items.Remove(selectedItems[i]);
+                    // attachementProgressBar.Increment(-Convert.ToInt32(info2.Length/(1024*1024)));
+
+                }
+            }
         }
+
+        
+
+        
     }
 }
