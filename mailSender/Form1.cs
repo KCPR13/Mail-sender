@@ -22,6 +22,7 @@ namespace mailSender
         MailMessage msg;
 
         long size;
+        int procentage;
        
 
         public mailSender()
@@ -126,18 +127,18 @@ namespace mailSender
         private void attachementPictureBox_Click(object sender, EventArgs e)
         {
             
-            //ofd.Filter = "JPG|*.jpg"; //filtr danych w ofd
+            ofd.Filter = "All files (*.*)|*.*"; //filtr danych w ofd
             if(ofd.ShowDialog()==DialogResult.OK) //wykonuje sie tylko gdy nacisniesz ok
             {
                 
                 Attachment atch = new Attachment(ofd.FileName);
                 FileInfo info = new FileInfo(ofd.FileName);
-
+           
                 size = info.Length/(1024*1024); //zamiana na mb
+               
                 attachementProgressBar.Minimum = 0;
                 attachementProgressBar.Maximum = 25;
-                int procentage;
-
+               
                 if (size > 25)
                 {
                     MessageBox.Show(string.Format("Attachment must be smaller than 25mb!"), "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -148,6 +149,7 @@ namespace mailSender
                     procentageLabel.Text = Convert.ToString(procentage) + "%";
                     attachementListBox.Items.Add(info.Name);
                     attachementListBox.Show();
+
                 }
                 
             }
@@ -161,22 +163,27 @@ namespace mailSender
 
         private void delAtchButton_Click(object sender, EventArgs e)
         {
-            if (attachementListBox.Items.Count<=0)
+            if (attachementListBox.SelectedIndex == -1)
             {
-               
+                
             }
             else
             {
                 ListBox.SelectedObjectCollection selectedItems = new ListBox.SelectedObjectCollection(attachementListBox);
                 selectedItems = attachementListBox.SelectedItems;
-                FileInfo info2 = new FileInfo(attachementListBox.SelectedItem.ToString());
-                // long size2 = info2.Length / (1024 * 1024);
+                
+                
 
                 if (attachementListBox.SelectedIndex != -1)
                 {
-                    for (int i = selectedItems.Count - 1; i >= 0; i--)
-                        attachementListBox.Items.Remove(selectedItems[i]);
-                    // attachementProgressBar.Increment(-Convert.ToInt32(info2.Length/(1024*1024)));
+                    
+                    for (int i = selectedItems.Count - 1; i  >= 0; i--)
+                     
+                     attachementListBox.Items.Remove(selectedItems[i]);
+
+                     
+                     //procentage = attachementProgressBar.Value * 4;
+                     //procentageLabel.Text = Convert.ToString(procentage) + "%";
 
                 }
             }
