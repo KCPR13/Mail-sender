@@ -326,6 +326,7 @@
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.Email);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(700, 700);
             this.Name = "mailSender";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
