@@ -98,10 +98,11 @@
             // 
             // buttonSend
             // 
-            this.buttonSend.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonSend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSend.Location = new System.Drawing.Point(305, 600);
-            this.buttonSend.MaximumSize = new System.Drawing.Size(270, 135);
+            this.buttonSend.MaximumSize = new System.Drawing.Size(1620, 810);
             this.buttonSend.MinimumSize = new System.Drawing.Size(90, 45);
             this.buttonSend.Name = "buttonSend";
             this.buttonSend.Size = new System.Drawing.Size(90, 45);
@@ -178,10 +179,7 @@
             "smtp.mail.yahoo.com",
             "smtp.poczta.onet.pl",
             "smtp.wp.pl",
-            "smtp-mail.outlook.com",
-            "",
-            "",
-            ""});
+            "smtp-mail.outlook.com"});
             this.smtpCheckedListBox.Location = new System.Drawing.Point(262, 491);
             this.smtpCheckedListBox.Name = "smtpCheckedListBox";
             this.smtpCheckedListBox.Size = new System.Drawing.Size(396, 89);
@@ -234,7 +232,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(10, 170);
-            this.textBox1.MaximumSize = new System.Drawing.Size(2000, 750);
+            this.textBox1.MaximumSize = new System.Drawing.Size(3000, 750);
             this.textBox1.MinimumSize = new System.Drawing.Size(648, 270);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -278,8 +276,7 @@
             // 
             // attachementListBox
             // 
-            this.attachementListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.attachementListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.attachementListBox.FormattingEnabled = true;
             this.attachementListBox.ItemHeight = 16;
