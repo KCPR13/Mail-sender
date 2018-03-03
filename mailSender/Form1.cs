@@ -180,7 +180,9 @@ namespace mailSender
                     for (int i = selectedItems.Count - 1; i  >= 0; i--)
                      
                      attachementListBox.Items.Remove(selectedItems[i]);
-
+                    //Tu nie wiem jak usunac ta okreslona wielkosc tego elementu zeby zmniejszyc
+                    //wypelnienie progress bara, czyli musze miec info o wielkosci tego elementu
+                   
                      
                      //procentage = attachementProgressBar.Value * 4;
                      //procentageLabel.Text = Convert.ToString(procentage) + "%";
