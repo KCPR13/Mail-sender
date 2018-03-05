@@ -14,16 +14,18 @@ using System.IO;
 namespace mailSender
 {
     
+    
     public partial class mailSender : Form
     {
         OpenFileDialog ofd = new OpenFileDialog();
         NetworkCredential login;
         SmtpClient client;
         MailMessage msg;
-
+        List<int> sizeAttachement = new List<int>(); 
         long size;
         int procentage;
-       
+        int flag = 1;
+
 
         public mailSender()
         {
@@ -133,7 +135,7 @@ namespace mailSender
                 
                 Attachment atch = new Attachment(ofd.FileName);
                 FileInfo info = new FileInfo(ofd.FileName);
-           
+                sizeAttachement.Add(Convert.ToInt32(info.Length / (1024 * 1024)));
                 size = info.Length/(1024*1024); //zamiana na mb
                
                 attachementProgressBar.Minimum = 0;
@@ -171,21 +173,32 @@ namespace mailSender
             {
                 ListBox.SelectedObjectCollection selectedItems = new ListBox.SelectedObjectCollection(attachementListBox);
                 selectedItems = attachementListBox.SelectedItems;
-                
-                
 
-                if (attachementListBox.SelectedIndex != -1)
+               
+
+                if (attachementListBox.SelectedIndex != -1  )
                 {
-                    
+                    if (flag==1)
+                    {
+                       // sizeAttachement.Reverse();
+                        flag = 0;
+                    }
+
+                    int attachementListBoxindex = attachementListBox.SelectedIndex;
                     for (int i = selectedItems.Count - 1; i  >= 0; i--)
                      
                      attachementListBox.Items.Remove(selectedItems[i]);
-                    //Tu nie wiem jak usunac ta okreslona wielkosc tego elementu zeby zmniejszyc
-                    //wypelnienie progress bara, czyli musze miec info o wielkosci tego elementu
+                    testTextBox.Text = Convert.ToString(attachementListBox.SelectedIndex);
                    
-                     
-                     //procentage = attachementProgressBar.Value * 4;
-                     //procentageLabel.Text = Convert.ToString(procentage) + "%";
+                    testTextBox.Text = Convert.ToString(sizeAttachement.Count);
+                    attachementProgressBar.Increment(-sizeAttachement[attachementListBoxindex]);
+                    testTextBox2.Text = Convert.ToString(attachementListBoxindex);
+                    sizeAttachement.RemoveAt(attachementListBoxindex);
+                    //Tu nie wiem jak usunac ta okreslona wielkosc tego elementu zeby zmniejszyc
+                    //wypelnienie progress bara, czyli musze miec info o wielkosci tego elementu  
+                    
+                    procentage = attachementProgressBar.Value * 4;
+                    procentageLabel.Text = Convert.ToString(procentage) + "%";
 
                 }
             }

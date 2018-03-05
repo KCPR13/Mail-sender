@@ -49,6 +49,8 @@
             this.procentageLabel = new System.Windows.Forms.Label();
             this.attachementListBox = new System.Windows.Forms.ListBox();
             this.delAtchButton = new System.Windows.Forms.Button();
+            this.testTextBox = new System.Windows.Forms.TextBox();
+            this.testTextBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.attachementPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -243,6 +245,7 @@
             // 
             this.attachementPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.attachementPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.attachementPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("attachementPictureBox.Image")));
             this.attachementPictureBox.Location = new System.Drawing.Point(14, 446);
             this.attachementPictureBox.Name = "attachementPictureBox";
@@ -301,11 +304,27 @@
             this.delAtchButton.UseVisualStyleBackColor = true;
             this.delAtchButton.Click += new System.EventHandler(this.delAtchButton_Click);
             // 
+            // testTextBox
+            // 
+            this.testTextBox.Location = new System.Drawing.Point(521, 606);
+            this.testTextBox.Name = "testTextBox";
+            this.testTextBox.Size = new System.Drawing.Size(125, 22);
+            this.testTextBox.TabIndex = 25;
+            // 
+            // testTextBox2
+            // 
+            this.testTextBox2.Location = new System.Drawing.Point(425, 606);
+            this.testTextBox2.Name = "testTextBox2";
+            this.testTextBox2.Size = new System.Drawing.Size(67, 22);
+            this.testTextBox2.TabIndex = 26;
+            // 
             // mailSender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 653);
+            this.Controls.Add(this.testTextBox2);
+            this.Controls.Add(this.testTextBox);
             this.Controls.Add(this.delAtchButton);
             this.Controls.Add(this.attachementListBox);
             this.Controls.Add(this.procentageLabel);
@@ -361,6 +380,8 @@
         private System.Windows.Forms.Label procentageLabel;
         private System.Windows.Forms.ListBox attachementListBox;
         private System.Windows.Forms.Button delAtchButton;
+        private System.Windows.Forms.TextBox testTextBox;
+        private System.Windows.Forms.TextBox testTextBox2;
     }
 }
 
