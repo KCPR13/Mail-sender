@@ -51,6 +51,7 @@
             this.delAtchButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.attachementPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -323,11 +324,19 @@
             this.emailTextBox.Size = new System.Drawing.Size(552, 22);
             this.emailTextBox.TabIndex = 27;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(485, 603);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(87, 22);
+            this.textBox1.TabIndex = 29;
+            // 
             // mailSender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 653);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.delAtchButton);
@@ -387,6 +396,7 @@
         private System.Windows.Forms.Button delAtchButton;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox emailTextBox;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

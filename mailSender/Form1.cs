@@ -20,7 +20,7 @@ namespace mailSender
     {
         
         OpenFileDialog ofd = new OpenFileDialog();
-        MailMessage msg;
+        public MailMessage msg = new MailMessage("defaulemail@email.com", "defaulemail@email.com","test","whatever");
         List<int> sizeAttachement = new List<int>();
         List<string> nameAttachement = new List<string>();
         long size;
@@ -192,11 +192,11 @@ namespace mailSender
                     int attachementListBoxindex = attachementListBox.SelectedIndex;
                     for (int i = selectedItems.Count - 1; i >= 0; i--)
                     attachementListBox.Items.Remove(selectedItems[i]);
-                    if(nameAttachement.Count >=0)
-                    {
-                        msg.Attachments.RemoveAt(attachementListBoxindex);
-                    }
                     
+                    //    msg.Attachments.RemoveAt(attachementListBoxindex); Zawsze ten index jest 0
+           
+
+
                     attachementProgressBar.Increment(-sizeAttachement[attachementListBoxindex]);
                     sizeAttachement.RemoveAt(attachementListBoxindex);
                     procentage = attachementProgressBar.Value * 4;
