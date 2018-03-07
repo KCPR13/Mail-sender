@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
 using System.IO;
+using System.Net.Mime;
 
 namespace mailSender
 {
@@ -18,13 +19,11 @@ namespace mailSender
     public partial class mailSender : Form
     {
         OpenFileDialog ofd = new OpenFileDialog();
-        NetworkCredential login;
-        SmtpClient client;
         MailMessage msg;
         List<int> sizeAttachement = new List<int>(); 
         long size;
         int procentage;
-        int flag = 1;
+     
 
 
         public mailSender()
@@ -73,33 +72,34 @@ namespace mailSender
             else if (counter == 0) MessageBox.Show(string.Format("Select one SMTP adress!"), "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                try
+                using (SmtpClient client = new SmtpClient())
                 {
-                    login = new NetworkCredential(emailTextBox.Text, PasswordTextBox.Text);
-                    foreach (string strSelected in smtpCheckedListBox.CheckedItems)
+                    var credential = new NetworkCredential
                     {
-                        client = new SmtpClient(strSelected);
+                        UserName = usernameTextBox.Text,
+                        Password = PasswordTextBox.Text
+
+                    };
+                    client.Credentials = credential;
+                    for (int z = 0; z < smtpCheckedListBox.Items.Count; z++)
+                    {
+                        if (smtpCheckedListBox.GetItemChecked(z))
+                        {
+                            string str = (string)smtpCheckedListBox.Items[z];
+                            client.Host = str;
+                        }
                     }
-                    client.Port = Convert.ToInt32(portDomain.SelectedItem);
+                    client.Port = Int32.Parse(portDomain.SelectedItem.ToString());
                     client.EnableSsl = sslCheckBox.Checked;
-                    client.Credentials = login;
-                     MessageBox.Show(string.Format("You've succeeded in logging in"), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                  
-                }
-                catch (Exception ex)
-                {
-                     MessageBox.Show(string.Format("Wrong e-mail or password !"), "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
- 
+                    msg.To.Add(new MailAddress(toTextBox.Text));
+                    msg.From = new MailAddress(emailTextBox.Text);
+                    msg.Subject = subjectTextBox.Text;
+                    msg.Body = messageTextBox.Text;
+                    msg.IsBodyHtml = true;
+                    client.Send(msg);
 
-
+                }
             }
-            //foreach (string s in smtpCheckedListBox.CheckedItems)
-            //{
-            //    textBox3.Paste(s);
-            //}
-           // textBox3.Paste(portDomain.SelectedItem.ToString());
-
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -133,11 +133,11 @@ namespace mailSender
             if(ofd.ShowDialog()==DialogResult.OK) //wykonuje sie tylko gdy nacisniesz ok
             {
                 
-                Attachment atch = new Attachment(ofd.FileName);
+                
                 FileInfo info = new FileInfo(ofd.FileName);
+                msg.Attachments.Add(new Attachment(ofd.SafeFileName));
                 sizeAttachement.Add(Convert.ToInt32(info.Length / (1024 * 1024)));
                 size = info.Length/(1024*1024); //zamiana na mb
-               
                 attachementProgressBar.Minimum = 0;
                 attachementProgressBar.Maximum = 25;
                
@@ -167,45 +167,31 @@ namespace mailSender
         {
             if (attachementListBox.SelectedIndex == -1)
             {
-                
+
             }
             else
             {
                 ListBox.SelectedObjectCollection selectedItems = new ListBox.SelectedObjectCollection(attachementListBox);
                 selectedItems = attachementListBox.SelectedItems;
 
-               
 
-                if (attachementListBox.SelectedIndex != -1  )
+                if (attachementListBox.SelectedIndex != -1)
                 {
-                    if (flag==1)
-                    {
-                       // sizeAttachement.Reverse();
-                        flag = 0;
-                    }
-
                     int attachementListBoxindex = attachementListBox.SelectedIndex;
-                    for (int i = selectedItems.Count - 1; i  >= 0; i--)
-                     
-                     attachementListBox.Items.Remove(selectedItems[i]);
-                    testTextBox.Text = Convert.ToString(attachementListBox.SelectedIndex);
-                   
-                    testTextBox.Text = Convert.ToString(sizeAttachement.Count);
+                    for (int i = selectedItems.Count - 1; i >= 0; i--)
+                    attachementListBox.Items.Remove(selectedItems[i]);
                     attachementProgressBar.Increment(-sizeAttachement[attachementListBoxindex]);
-                    testTextBox2.Text = Convert.ToString(attachementListBoxindex);
+                    msg.Attachments.RemoveAt(attachementListBoxindex);
                     sizeAttachement.RemoveAt(attachementListBoxindex);
-                    //Tu nie wiem jak usunac ta okreslona wielkosc tego elementu zeby zmniejszyc
-                    //wypelnienie progress bara, czyli musze miec info o wielkosci tego elementu  
-                    
                     procentage = attachementProgressBar.Value * 4;
                     procentageLabel.Text = Convert.ToString(procentage) + "%";
-
+                    
+                   
                 }
+
+            
             }
         }
-
-        
-
-        
     }
 }
+

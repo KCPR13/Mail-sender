@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mailSender));
             this.Email = new System.Windows.Forms.Label();
-            this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSend = new System.Windows.Forms.Button();
@@ -43,14 +43,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.toTextBox = new System.Windows.Forms.TextBox();
             this.subjectTextBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.messageTextBox = new System.Windows.Forms.TextBox();
             this.attachementPictureBox = new System.Windows.Forms.PictureBox();
             this.attachementProgressBar = new System.Windows.Forms.ProgressBar();
             this.procentageLabel = new System.Windows.Forms.Label();
             this.attachementListBox = new System.Windows.Forms.ListBox();
             this.delAtchButton = new System.Windows.Forms.Button();
-            this.testTextBox = new System.Windows.Forms.TextBox();
-            this.testTextBox2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.attachementPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,21 +61,21 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Email.AutoSize = true;
             this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Email.Location = new System.Drawing.Point(10, 20);
+            this.Email.Location = new System.Drawing.Point(5, 20);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(62, 20);
+            this.Email.Size = new System.Drawing.Size(91, 20);
             this.Email.TabIndex = 0;
-            this.Email.Text = "E-mail:";
+            this.Email.Text = "Username:";
             // 
-            // emailTextBox
+            // usernameTextBox
             // 
-            this.emailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.usernameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.emailTextBox.Location = new System.Drawing.Point(106, 20);
-            this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(552, 22);
-            this.emailTextBox.TabIndex = 2;
+            this.usernameTextBox.Location = new System.Drawing.Point(106, 20);
+            this.usernameTextBox.Name = "usernameTextBox";
+            this.usernameTextBox.Size = new System.Drawing.Size(552, 22);
+            this.usernameTextBox.TabIndex = 2;
             // 
             // PasswordTextBox
             // 
@@ -92,7 +92,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(8, 60);
+            this.label1.Location = new System.Drawing.Point(5, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 5;
@@ -192,7 +192,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(10, 100);
+            this.label3.Location = new System.Drawing.Point(5, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 20);
             this.label3.TabIndex = 15;
@@ -202,7 +202,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(10, 140);
+            this.label4.Location = new System.Drawing.Point(5, 180);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 20);
             this.label4.TabIndex = 16;
@@ -213,7 +213,7 @@
             this.toTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.toTextBox.Location = new System.Drawing.Point(106, 100);
+            this.toTextBox.Location = new System.Drawing.Point(106, 140);
             this.toTextBox.Name = "toTextBox";
             this.toTextBox.Size = new System.Drawing.Size(552, 22);
             this.toTextBox.TabIndex = 17;
@@ -223,23 +223,22 @@
             this.subjectTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.subjectTextBox.Location = new System.Drawing.Point(106, 140);
+            this.subjectTextBox.Location = new System.Drawing.Point(106, 180);
             this.subjectTextBox.Name = "subjectTextBox";
             this.subjectTextBox.Size = new System.Drawing.Size(552, 22);
             this.subjectTextBox.TabIndex = 18;
             // 
-            // textBox1
+            // messageTextBox
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.messageTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(10, 170);
-            this.textBox1.MaximumSize = new System.Drawing.Size(3000, 750);
-            this.textBox1.MinimumSize = new System.Drawing.Size(648, 270);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(648, 270);
-            this.textBox1.TabIndex = 19;
+            this.messageTextBox.Location = new System.Drawing.Point(10, 208);
+            this.messageTextBox.MaximumSize = new System.Drawing.Size(3000, 750);
+            this.messageTextBox.Multiline = true;
+            this.messageTextBox.Name = "messageTextBox";
+            this.messageTextBox.Size = new System.Drawing.Size(648, 232);
+            this.messageTextBox.TabIndex = 19;
             // 
             // attachementPictureBox
             // 
@@ -304,33 +303,39 @@
             this.delAtchButton.UseVisualStyleBackColor = true;
             this.delAtchButton.Click += new System.EventHandler(this.delAtchButton_Click);
             // 
-            // testTextBox
+            // label5
             // 
-            this.testTextBox.Location = new System.Drawing.Point(521, 606);
-            this.testTextBox.Name = "testTextBox";
-            this.testTextBox.Size = new System.Drawing.Size(125, 22);
-            this.testTextBox.TabIndex = 25;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(5, 100);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 20);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "E-mail:";
             // 
-            // testTextBox2
+            // emailTextBox
             // 
-            this.testTextBox2.Location = new System.Drawing.Point(425, 606);
-            this.testTextBox2.Name = "testTextBox2";
-            this.testTextBox2.Size = new System.Drawing.Size(67, 22);
-            this.testTextBox2.TabIndex = 26;
+            this.emailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.emailTextBox.Location = new System.Drawing.Point(106, 100);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(552, 22);
+            this.emailTextBox.TabIndex = 27;
             // 
             // mailSender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 653);
-            this.Controls.Add(this.testTextBox2);
-            this.Controls.Add(this.testTextBox);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.delAtchButton);
             this.Controls.Add(this.attachementListBox);
             this.Controls.Add(this.procentageLabel);
             this.Controls.Add(this.attachementProgressBar);
             this.Controls.Add(this.attachementPictureBox);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.messageTextBox);
             this.Controls.Add(this.subjectTextBox);
             this.Controls.Add(this.toTextBox);
             this.Controls.Add(this.label4);
@@ -343,7 +348,7 @@
             this.Controls.Add(this.buttonSend);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PasswordTextBox);
-            this.Controls.Add(this.emailTextBox);
+            this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.Email);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(700, 700);
@@ -361,7 +366,7 @@
         #endregion
 
         private System.Windows.Forms.Label Email;
-        private System.Windows.Forms.TextBox emailTextBox;
+        private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonSend;
@@ -374,14 +379,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox toTextBox;
         private System.Windows.Forms.TextBox subjectTextBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox messageTextBox;
         private System.Windows.Forms.PictureBox attachementPictureBox;
         private System.Windows.Forms.ProgressBar attachementProgressBar;
         private System.Windows.Forms.Label procentageLabel;
         private System.Windows.Forms.ListBox attachementListBox;
         private System.Windows.Forms.Button delAtchButton;
-        private System.Windows.Forms.TextBox testTextBox;
-        private System.Windows.Forms.TextBox testTextBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox emailTextBox;
     }
 }
 
