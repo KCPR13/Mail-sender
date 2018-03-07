@@ -18,11 +18,14 @@ namespace mailSender
     
     public partial class mailSender : Form
     {
+        
         OpenFileDialog ofd = new OpenFileDialog();
         MailMessage msg;
-        List<int> sizeAttachement = new List<int>(); 
+        List<int> sizeAttachement = new List<int>();
+        List<string> nameAttachement = new List<string>();
         long size;
         int procentage;
+        string path;
      
 
 
@@ -31,7 +34,7 @@ namespace mailSender
             InitializeComponent();
            
         }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             DomainUpDown.DomainUpDownItemCollection collection = this.portDomain.Items;
@@ -54,8 +57,8 @@ namespace mailSender
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            PasswordTextBox.PasswordChar = '*'; //password character
-            PasswordTextBox.MaxLength = 16; //maximum 16 characters
+            PasswordTextBox.PasswordChar = '*'; 
+            PasswordTextBox.MaxLength = 32; 
             
         }
 
@@ -96,7 +99,16 @@ namespace mailSender
                     msg.Subject = subjectTextBox.Text;
                     msg.Body = messageTextBox.Text;
                     msg.IsBodyHtml = true;
-                    client.Send(msg);
+                    msg.Attachments.Add(new Attachment(path));
+                    try
+                    {
+                        client.Send(msg);
+                    }
+                    catch
+                    {
+                        MessageBox.Show(string.Format("Email cannot be sent "), "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
 
                 }
             }
@@ -132,11 +144,11 @@ namespace mailSender
             ofd.Filter = "All files (*.*)|*.*"; //filtr danych w ofd
             if(ofd.ShowDialog()==DialogResult.OK) //wykonuje sie tylko gdy nacisniesz ok
             {
-                
-                
+
+                 path = ofd.FileName.ToString();
                 FileInfo info = new FileInfo(ofd.FileName);
-                msg.Attachments.Add(new Attachment(ofd.SafeFileName));
                 sizeAttachement.Add(Convert.ToInt32(info.Length / (1024 * 1024)));
+                nameAttachement.Add(ofd.FileName);
                 size = info.Length/(1024*1024); //zamiana na mb
                 attachementProgressBar.Minimum = 0;
                 attachementProgressBar.Maximum = 25;
@@ -173,23 +185,42 @@ namespace mailSender
             {
                 ListBox.SelectedObjectCollection selectedItems = new ListBox.SelectedObjectCollection(attachementListBox);
                 selectedItems = attachementListBox.SelectedItems;
-
+               
 
                 if (attachementListBox.SelectedIndex != -1)
                 {
                     int attachementListBoxindex = attachementListBox.SelectedIndex;
                     for (int i = selectedItems.Count - 1; i >= 0; i--)
                     attachementListBox.Items.Remove(selectedItems[i]);
+                    if(nameAttachement.Count >=0)
+                    {
+                        msg.Attachments.RemoveAt(attachementListBoxindex);
+                    }
+                    
                     attachementProgressBar.Increment(-sizeAttachement[attachementListBoxindex]);
-                    msg.Attachments.RemoveAt(attachementListBoxindex);
                     sizeAttachement.RemoveAt(attachementListBoxindex);
                     procentage = attachementProgressBar.Value * 4;
                     procentageLabel.Text = Convert.ToString(procentage) + "%";
-                    
-                   
-                }
 
-            
+                    
+                    //for(int z=0; z<=nameAttachement.Count; z++)
+                    //{
+                    //    foreach (Attachment attachment in msg.Attachments)
+                    //    {   
+                    //        if (attachment.Name == Convert.ToString(nameAttachement[z]))
+                    //        {
+                    //            msg.Attachments.Remove(attachment);
+                    //            break;
+                    //        }
+                    //    }
+                      
+                    //}
+
+
+                }
+                
+
+
             }
         }
     }
