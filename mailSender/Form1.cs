@@ -20,7 +20,7 @@ namespace mailSender
     {
         
         OpenFileDialog ofd = new OpenFileDialog();
-        public MailMessage msg = new MailMessage("defaulemail@email.com", "defaulemail@email.com","test","whatever");
+        MailMessage msg = new MailMessage();
         List<int> sizeAttachement = new List<int>();
         List<string> nameAttachement = new List<string>();
         long size;
@@ -158,6 +158,7 @@ namespace mailSender
                     MessageBox.Show(string.Format("Attachment must be smaller than 25mb!"), "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }else
                 {
+                    msg.Attachments.Add(new Attachment(path));
                     attachementProgressBar.Increment(Convert.ToInt32(size));
                     procentage = attachementProgressBar.Value * 4;
                     procentageLabel.Text = Convert.ToString(procentage) + "%";
@@ -193,7 +194,7 @@ namespace mailSender
                     for (int i = selectedItems.Count - 1; i >= 0; i--)
                     attachementListBox.Items.Remove(selectedItems[i]);
                     
-                    //    msg.Attachments.RemoveAt(attachementListBoxindex); Zawsze ten index jest 0
+                    msg.Attachments.RemoveAt(attachementListBoxindex);
            
 
 
@@ -203,18 +204,18 @@ namespace mailSender
                     procentageLabel.Text = Convert.ToString(procentage) + "%";
 
                     
-                    //for(int z=0; z<=nameAttachement.Count; z++)
-                    //{
-                    //    foreach (Attachment attachment in msg.Attachments)
-                    //    {   
-                    //        if (attachment.Name == Convert.ToString(nameAttachement[z]))
-                    //        {
-                    //            msg.Attachments.Remove(attachment);
-                    //            break;
-                    //        }
-                    //    }
-                      
-                    //}
+                    for(int z= nameAttachement.Count-1; z>=0; z--)
+                    {
+                        foreach (Attachment attachment in msg.Attachments)
+                        {
+                            if (attachment.Name == Convert.ToString(nameAttachement[z]))
+                            {
+                                msg.Attachments.Remove(attachment);
+                                break;
+                            }
+                        }
+
+                    }
 
 
                 }
