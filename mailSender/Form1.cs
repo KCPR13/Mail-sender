@@ -37,7 +37,7 @@ namespace mailSender
             DomainUpDown.DomainUpDownItemCollection collection = this.portDomain.Items;   
             collection.Add("587");
             collection.Add("25");
-            this.portDomain.Text = "587";
+            portDomain.SelectedIndex = 0;
             attachementListBox.Hide();
         }
 
@@ -89,7 +89,7 @@ namespace mailSender
                     msg.Subject = subjectTextBox.Text;
                     msg.Body = messageTextBox.Text;
                     msg.IsBodyHtml = true;
-                    msg.Attachments.Add(new Attachment(path));
+                    
                     try
                     {
                         client.Send(msg);
