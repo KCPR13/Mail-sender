@@ -27,27 +27,18 @@ namespace mailSender
         int procentage;
         string path;
      
-
-
         public mailSender()
         {
-            InitializeComponent();
-           
+            InitializeComponent();       
         }
         
         private void Form1_Load(object sender, EventArgs e)
         {
-            DomainUpDown.DomainUpDownItemCollection collection = this.portDomain.Items;
-            
+            DomainUpDown.DomainUpDownItemCollection collection = this.portDomain.Items;   
             collection.Add("587");
             collection.Add("25");
             this.portDomain.Text = "587";
             attachementListBox.Hide();
-
-
-
-
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -58,8 +49,7 @@ namespace mailSender
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             PasswordTextBox.PasswordChar = '*'; 
-            PasswordTextBox.MaxLength = 32; 
-            
+            PasswordTextBox.MaxLength = 32;         
         }
 
         private void Save_CheckedChanged(object sender, EventArgs e)
@@ -108,8 +98,6 @@ namespace mailSender
                     {
                         MessageBox.Show(string.Format("Email cannot be sent "), "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    
-
                 }
             }
         }
@@ -139,13 +127,11 @@ namespace mailSender
         }
 
         private void attachementPictureBox_Click(object sender, EventArgs e)
-        {
-            
+        { 
             ofd.Filter = "All files (*.*)|*.*"; //filtr danych w ofd
             if(ofd.ShowDialog()==DialogResult.OK) //wykonuje sie tylko gdy nacisniesz ok
             {
-
-                 path = ofd.FileName.ToString();
+                path = ofd.FileName.ToString();
                 FileInfo info = new FileInfo(ofd.FileName);
                 sizeAttachement.Add(Convert.ToInt32(info.Length / (1024 * 1024)));
                 nameAttachement.Add(ofd.FileName);
@@ -164,11 +150,8 @@ namespace mailSender
                     procentageLabel.Text = Convert.ToString(procentage) + "%";
                     attachementListBox.Items.Add(info.Name);
                     attachementListBox.Show();
-
-                }
-                
+                }             
             }
-
         }
 
         private void attachementListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -186,24 +169,17 @@ namespace mailSender
             {
                 ListBox.SelectedObjectCollection selectedItems = new ListBox.SelectedObjectCollection(attachementListBox);
                 selectedItems = attachementListBox.SelectedItems;
-               
-
                 if (attachementListBox.SelectedIndex != -1)
                 {
                     int attachementListBoxindex = attachementListBox.SelectedIndex;
                     for (int i = selectedItems.Count - 1; i >= 0; i--)
-                    attachementListBox.Items.Remove(selectedItems[i]);
-                    
+                    attachementListBox.Items.Remove(selectedItems[i]);  
                     msg.Attachments.RemoveAt(attachementListBoxindex);
-           
-
-
                     attachementProgressBar.Increment(-sizeAttachement[attachementListBoxindex]);
                     sizeAttachement.RemoveAt(attachementListBoxindex);
                     procentage = attachementProgressBar.Value * 4;
                     procentageLabel.Text = Convert.ToString(procentage) + "%";
-
-                    
+       
                     for(int z= nameAttachement.Count-1; z>=0; z--)
                     {
                         foreach (Attachment attachment in msg.Attachments)
@@ -214,10 +190,7 @@ namespace mailSender
                                 break;
                             }
                         }
-
                     }
-
-
                 }
                 
 
