@@ -59,46 +59,47 @@ namespace mailSender
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            
             int counter;
             counter = smtpCheckedListBox.CheckedItems.Count;
             if (counter > 1) MessageBox.Show(string.Format("Select only one SMTP adress!"), "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (counter == 0) MessageBox.Show(string.Format("Select one SMTP adress!"), "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                using (SmtpClient client = new SmtpClient())
-                {
-                    var credential = new NetworkCredential
+             
+                    using (SmtpClient client = new SmtpClient())
                     {
-                        UserName = usernameTextBox.Text,
-                        Password = PasswordTextBox.Text
-
-                    };
-                    client.Credentials = credential;
-                    for (int z = 0; z < smtpCheckedListBox.Items.Count; z++)
-                    {
-                        if (smtpCheckedListBox.GetItemChecked(z))
-                        {
-                            string str = (string)smtpCheckedListBox.Items[z];
-                            client.Host = str;
-                        }
-                    }
-                    client.Port = Int32.Parse(portDomain.SelectedItem.ToString());
                     client.EnableSsl = sslCheckBox.Checked;
-                    msg.To.Add(new MailAddress(toTextBox.Text));
-                    msg.From = new MailAddress(emailTextBox.Text);
-                    msg.Subject = subjectTextBox.Text;
-                    msg.Body = messageTextBox.Text;
-                    msg.IsBodyHtml = true;
-                    
                     try
-                    {
-                        client.Send(msg);
+                       {
+                             var credential = new NetworkCredential
+                             {
+                                  UserName = usernameTextBox.Text,
+                                  Password = PasswordTextBox.Text
+                             };
+                             client.Credentials = credential;
+                             for (int z = 0; z < smtpCheckedListBox.Items.Count; z++)
+                             {
+                                 if (smtpCheckedListBox.GetItemChecked(z))
+                                 {
+                                string str = (string)smtpCheckedListBox.Items[z];
+                                client.Host = str;
+                                 }
+                             }
+                             client.Port = Int32.Parse(portDomain.SelectedItem.ToString());
+                             
+                             msg.To.Add(new MailAddress(toTextBox.Text));
+                             msg.From = new MailAddress(emailTextBox.Text);
+                             msg.Subject = subjectTextBox.Text;
+                             msg.Body = messageTextBox.Text;
+                             msg.IsBodyHtml = true;
+                             client.Send(msg);
+                       }
+                       catch
+                       {
+                            MessageBox.Show(string.Format("Email cannot be sent! "), "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                       }
                     }
-                    catch
-                    {
-                        MessageBox.Show(string.Format("Email cannot be sent "), "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
             }
         }
 
