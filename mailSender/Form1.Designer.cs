@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mailSender));
-            this.Email = new System.Windows.Forms.Label();
+            this.usernameLabel = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.passwordLabel = new System.Windows.Forms.Label();
             this.buttonSend = new System.Windows.Forms.Button();
             this.portDomain = new System.Windows.Forms.DomainUpDown();
-            this.label2 = new System.Windows.Forms.Label();
+            this.portLabel = new System.Windows.Forms.Label();
             this.smtpLabel = new System.Windows.Forms.Label();
             this.sslCheckBox = new System.Windows.Forms.CheckBox();
             this.smtpCheckedListBox = new System.Windows.Forms.CheckedListBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.toLabel = new System.Windows.Forms.Label();
+            this.subjectLabel = new System.Windows.Forms.Label();
             this.toTextBox = new System.Windows.Forms.TextBox();
             this.subjectTextBox = new System.Windows.Forms.TextBox();
             this.messageTextBox = new System.Windows.Forms.TextBox();
@@ -49,23 +49,23 @@
             this.procentageLabel = new System.Windows.Forms.Label();
             this.attachementListBox = new System.Windows.Forms.ListBox();
             this.delAtchButton = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.emailLabel = new System.Windows.Forms.Label();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.attachementPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // Email
+            // usernameLabel
             // 
-            this.Email.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.usernameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Email.AutoSize = true;
-            this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Email.Location = new System.Drawing.Point(5, 20);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(91, 20);
-            this.Email.TabIndex = 0;
-            this.Email.Text = "Username:";
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.usernameLabel.Location = new System.Drawing.Point(5, 20);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(91, 20);
+            this.usernameLabel.TabIndex = 0;
+            this.usernameLabel.Text = "Username:";
             // 
             // usernameTextBox
             // 
@@ -88,15 +88,15 @@
             this.PasswordTextBox.TabIndex = 4;
             this.PasswordTextBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // label1
+            // passwordLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(5, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Password:";
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.passwordLabel.Location = new System.Drawing.Point(5, 60);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(88, 20);
+            this.passwordLabel.TabIndex = 5;
+            this.passwordLabel.Text = "Password:";
             // 
             // buttonSend
             // 
@@ -124,22 +124,20 @@
             this.portDomain.Size = new System.Drawing.Size(110, 22);
             this.portDomain.TabIndex = 9;
             this.portDomain.Text = "587";
-            this.portDomain.SelectedItemChanged += new System.EventHandler(this.portDomain_SelectedItemChanged);
             // 
-            // label2
+            // portLabel
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.portLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(8, 560);
-            this.label2.MaximumSize = new System.Drawing.Size(60, 20);
-            this.label2.MinimumSize = new System.Drawing.Size(60, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 20);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Port:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.portLabel.AutoSize = true;
+            this.portLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.portLabel.Location = new System.Drawing.Point(8, 560);
+            this.portLabel.MaximumSize = new System.Drawing.Size(60, 20);
+            this.portLabel.MinimumSize = new System.Drawing.Size(60, 20);
+            this.portLabel.Name = "portLabel";
+            this.portLabel.Size = new System.Drawing.Size(60, 20);
+            this.portLabel.TabIndex = 10;
+            this.portLabel.Text = "Port:";
             // 
             // smtpLabel
             // 
@@ -186,27 +184,26 @@
             this.smtpCheckedListBox.Name = "smtpCheckedListBox";
             this.smtpCheckedListBox.Size = new System.Drawing.Size(396, 89);
             this.smtpCheckedListBox.TabIndex = 14;
-            this.smtpCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.smtpCheckedListBox_SelectedIndexChanged);
             // 
-            // label3
+            // toLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(5, 140);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 20);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "To:";
+            this.toLabel.AutoSize = true;
+            this.toLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.toLabel.Location = new System.Drawing.Point(5, 140);
+            this.toLabel.Name = "toLabel";
+            this.toLabel.Size = new System.Drawing.Size(33, 20);
+            this.toLabel.TabIndex = 15;
+            this.toLabel.Text = "To:";
             // 
-            // label4
+            // subjectLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(5, 180);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 20);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Subject:";
+            this.subjectLabel.AutoSize = true;
+            this.subjectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.subjectLabel.Location = new System.Drawing.Point(5, 180);
+            this.subjectLabel.Name = "subjectLabel";
+            this.subjectLabel.Size = new System.Drawing.Size(70, 20);
+            this.subjectLabel.TabIndex = 16;
+            this.subjectLabel.Text = "Subject:";
             // 
             // toTextBox
             // 
@@ -286,7 +283,6 @@
             this.attachementListBox.Name = "attachementListBox";
             this.attachementListBox.Size = new System.Drawing.Size(648, 84);
             this.attachementListBox.TabIndex = 23;
-            this.attachementListBox.SelectedIndexChanged += new System.EventHandler(this.attachementListBox_SelectedIndexChanged);
             // 
             // delAtchButton
             // 
@@ -303,15 +299,15 @@
             this.delAtchButton.UseVisualStyleBackColor = true;
             this.delAtchButton.Click += new System.EventHandler(this.delAtchButton_Click);
             // 
-            // label5
+            // emailLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(5, 100);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 20);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "E-mail:";
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.emailLabel.Location = new System.Drawing.Point(5, 100);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(62, 20);
+            this.emailLabel.TabIndex = 28;
+            this.emailLabel.Text = "E-mail:";
             // 
             // emailTextBox
             // 
@@ -328,7 +324,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 653);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.delAtchButton);
             this.Controls.Add(this.attachementListBox);
@@ -338,18 +334,18 @@
             this.Controls.Add(this.messageTextBox);
             this.Controls.Add(this.subjectTextBox);
             this.Controls.Add(this.toTextBox);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.subjectLabel);
+            this.Controls.Add(this.toLabel);
             this.Controls.Add(this.smtpCheckedListBox);
             this.Controls.Add(this.sslCheckBox);
             this.Controls.Add(this.smtpLabel);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.portLabel);
             this.Controls.Add(this.portDomain);
             this.Controls.Add(this.buttonSend);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.usernameTextBox);
-            this.Controls.Add(this.Email);
+            this.Controls.Add(this.usernameLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(700, 700);
@@ -366,18 +362,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Label Email;
+        private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.TextBox PasswordTextBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Button buttonSend;
         private System.Windows.Forms.DomainUpDown portDomain;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label portLabel;
         private System.Windows.Forms.Label smtpLabel;
         private System.Windows.Forms.CheckBox sslCheckBox;
         private System.Windows.Forms.CheckedListBox smtpCheckedListBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label toLabel;
+        private System.Windows.Forms.Label subjectLabel;
         private System.Windows.Forms.TextBox toTextBox;
         private System.Windows.Forms.TextBox subjectTextBox;
         private System.Windows.Forms.TextBox messageTextBox;
@@ -386,7 +382,7 @@
         private System.Windows.Forms.Label procentageLabel;
         private System.Windows.Forms.ListBox attachementListBox;
         private System.Windows.Forms.Button delAtchButton;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.TextBox emailTextBox;
     }
 }
